@@ -1,1 +1,34 @@
-body {}
+:root {
+    --background-color: #8ecae6;
+    --text-color: #fdf0d5;
+    --button-color: #da627d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);      
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+div {
+    color: var(--text-color);
+}
+
+button {
+    height: 50px;
+    width: 120px;
+    color: var(--text-color); 
+    background-color: var(--button-color);
+    border: none;
+}
+
+button:hover {
+    background-color: #f07167; 
+}

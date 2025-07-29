@@ -86,7 +86,7 @@ class NeuralNetwork(object):
         self.z_values = []
         
         """hidden layers calculation"""
-        for i in range(len(self.weights)):
+        for i in range(len(self.weights) - 1):
             z_value = np.dot(self.weights[i], self.activation_values[i]) + self.biases[i]    
             self.z_values.append(z_value)
             
@@ -94,7 +94,7 @@ class NeuralNetwork(object):
             self.activation_values.append(activation)
         
         #the resulte calculatied in the ouput_layer (last layers of the network)
-        z_output = np.dot(self.activation_values[-1],self.weights[-1]) + self.biases[-1]
+        z_output = np.dot(self.weights[-1],self.activation_values[-1]) + self.biases[-1]
         self.z_values.append(z_output)
 
         output_value: NDArray = self.output_activation_function(z_output)
